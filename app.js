@@ -29,21 +29,14 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 function multiply(number1, number2) {
-  console.log(number1, number2);
-  var sumtotal = number1 * number2;
-  var response = ['The product of ', number1,' and ', number2, ' is ', sumtotal, ' .'];
-  console.log (response);
-  console.log(sumtotal);
-  return response;
+  var product = number1 * number2;
+  var response = 'The product of ' + number1 + ' and ' + number2 + ' is ' + product + '.';
+  return [product, response];
 }
 multiply(5,9);
 
-
-
-
-
 // Here is the test for multiply(); uncomment it to run it
-  testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -59,12 +52,23 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a,b,c){ //eslint-disable-line
-
+function sumAndMultiply(x,y,z){ //eslint-disable-line
+  console.log(x,y,z);
+  var e1 = sum (x,y)[0];
+  console.log(e1)
+  var firstElement = sum (e1, z)[0];
+  console.log('this is the final first element', firstElement);
+  var e2 = multiply (x,y)[0];
+  var secondElement = multiply (e2, z)[0];
+  console.log('this is the final secondelement', secondElement);
+  var thirdElement = x + ' and ' + y + ' and ' + z + ' sum to ' + firstElement + '.';
+  var fourthElement = 'The product of ' + x + ' and ' + y + ' and ' + z + ' is ' + secondElement + '.';
+  return [firstElement, secondElement, thirdElement, fourthElement]
 }
 
+sumAndMultiply(10,1,5);
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
